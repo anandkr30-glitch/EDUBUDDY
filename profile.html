@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduBuddy - Profile</title>
+  
+  <!-- Link your main CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <!-- Main content container -->
+  <div id="view"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+  <!-- Firebase Config -->
+  <script src="js/firebase.js"></script>
+
+  <!-- Profile Script -->
+  <script src="js/profile.js"></script>
+
+  <!-- Initialize Profile on Page Load -->
+  <script>
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        displayProfile();
+      } else {
+        document.getElementById('view').innerHTML = `
+          <div style="text-align: center; padding: 40px; color: white;">
+            <h2>Please log in to view your profile</h2>
+            <a href="auth.html" style="color: #6366f1; text-decoration: underline;">Go to Login</a>
+          </div>
+        `;
+      }
+    });
+  </script>
+
+</body>
+</html>

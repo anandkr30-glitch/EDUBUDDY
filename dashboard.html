@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduBuddy Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+
+<body>
+<button id="menuToggle" class="menu-btn">☰</button>
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo">EduBuddy</h2>
+      <p class="tagline">Smart Learning</p>
+    </div>
+
+    <ul>
+      <li data-page="dashboard" class="active">🏠 Dashboard</li>
+      <li data-page="quiz">📝 Quiz</li>
+      <li data-page="ai">🤖 AI Coach</li>
+      <li data-page="profile">👤 Profile</li>
+      <li id="logoutBtn">🚪 Logout</li>
+    </ul>
+  </aside>
+  <main class="content">
+    <div id="view"></div>
+
+  </main>
+
+</div>
+<div id="reviewModal" class="modal hidden">
+  <div class="modal-content">
+    <span id="closeModal">×</span>
+    <div id="reviewContent"></div>
+  </div>
+</div>
+
+<script type="module" src="js/router.js"></script>
+</body>
+</html>

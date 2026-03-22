@@ -1,0 +1,24 @@
+<script>
+  window.location.href = "auth.html";
+</script>
+<button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+    themeToggle.textContent = '☀️ Light';
+  }
+  
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    if (document.body.classList.contains('light-mode')) {
+      localStorage.setItem('theme', 'light');
+      themeToggle.textContent = '☀️ Light';
+    } else {
+      localStorage.setItem('theme', 'dark');
+      themeToggle.textContent = '🌙 Dark';
+    }
+  });
+</script>
