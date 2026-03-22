@@ -1,4 +1,4 @@
-# 🎓 EduBuddy - AI-Powered Educational Platform
+# 🎓 EduBuddy - A personalised and gamified adaptive learning Dashboard
 
 > Transform your learning journey with intelligent AI coaching, personalized quizzes, and adaptive learning paths.
 
